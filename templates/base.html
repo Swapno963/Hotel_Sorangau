@@ -19,26 +19,24 @@
 
        
         {% comment %} adding navigation bar {% endcomment %}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    {% comment %} <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a> {% endcomment %}
+                    <a class="nav-link active fw-bold" aria-current="page" href="{% url 'home'%}">Home</a>
                   </li>
                   <li class="nav-item">
-                    {% comment %} <a class="nav-link active" aria-current="page" href="{% url 'meal'%}">Meal</a> {% endcomment %}
+                    <a class="nav-link active fw-bold" aria-current="page" href="{% url 'meal'%}">Show Item</a>
                   </li>
                   <li class="nav-item active">
-                    {% comment %} <a class="nav-link" href="{% url 'about_us' %}">About Us</a> {% endcomment %}
+                    <a class="nav-link active fw-bold" aria-current="page" href="{% url 'about_us' %}">About Us</a>
                   </li>
-                
                   <li class="nav-item active">
-                    <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Show Item</a>
+                    <a class="nav-link active fw-bold" aria-current="page">Menu</a>
                   </li>
                 </ul>
                 <form class="d-flex">
@@ -53,10 +51,10 @@
         
 
           <div  class='d-flex justify-content-center mt-5'>
-              <div class="card" >
-                  <img class='w-100' src="{% static 'images/meal_logo.png' %}"/>
+              <div class="card " >
+                  <img  class='w-100'style="height:250px;" src="{% static 'images/meal_logo.png' %}"/>
                   <div class="card-body">
-                      {% comment %} <h1 class='text-center m-5'> Welcome To Our Website. </h1> {% endcomment %}
+                      <h1 class='text-center m-5'> Welcome To Our Sonargou Resturent. </h1>
                   {% comment %} <p class="card-text">{{i.idCategory}}</p>
                   <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
                 </div>
@@ -69,19 +67,23 @@
                 <div class='row '>
 
               {% block meal_container %}
-              <h1> Parent </h1>
+              {% comment %} <h1> Parent </h1> {% endcomment %}
               {%  endblock %}
               
-                </div>
             </div>
-       
-       
-       
-       
- 
-        
-        
-        
+          </div>
+          
+          
+          
+          
+          {% block about_block%}
+            <div class='container mt-5 '>
+              {% block about %}
+              {% comment %} <h1> Parent </h1> {% endcomment %}
+                {%endblock%}
+                
+              </div>
+          {%endblock%}
         
         
         
