@@ -1,9 +1,16 @@
+
 {% extends "base.html" %}
+{% load static%}
 
 {%block about%}
-<h1> about </h1>
-<h1> about </h1>
-<p> about </p>
-<p></p>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto, error sapiente quis nihil accusantium ullam inventore voluptate quam odio eum, harum eaque, ipsam earum voluptatem eveniet. Iste eum facilis ullam.</p>
+        </div>
+        <div class="col-md-6">
 
+            <img  class='w-100'  src="{% static 'images/ab.jpg' %}" alt="">
+        </div>
+    </div>
 {%endblock%}
